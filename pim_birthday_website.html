@@ -29,4 +29,118 @@
       align-items: center;
       text-align: center;
       padding: 40px;
-      box-sizing:
+      box-sizing: border-box;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 700px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      font-size: 20px;
+    }
+
+    h1, h2 {
+      color: #4a7bd8;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      background: #6fa8ff;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      margin: 0 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4a7bd8;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="slides" id="slides">
+
+  <!-- Slide 1 -->
+  <div class="slide">
+    <h1>Happy Birthday, Pim 🎂</h1>
+    <div class="card">
+      วันนี้เป็นวันพิเศษของพิม 💙<br>
+      เลื่อนดูต่อได้เลย ✨
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <h2>💌 Birthday Message</h2>
+    <div class="card">
+      สุขสันต์วันเกิดน้าา 🎉<br><br>
+      ขอให้ปีนี้และปีต่อๆ ไปเป็นปีที่ดี<br>
+      มีรอยยิ้มเยอะๆ<br>
+      และมีความสุขในแบบของเตงน้า 💙
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <h2>📸 Birthday Mode</h2>
+    <img src="3e2f8423-4a48-4bb3-b6b7-b4664e12cf99.png" alt="Birthday Cat">
+    <p>โหมดวันเกิดของพิม 😼🎉</p>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <h2>🌟 Final Wish</h2>
+    <div class="card">
+      ขอให้วันเกิดปีนี้เต็มไปด้วยความสบายใจ<br>
+      และทุกวันมีความสุขเสมอ ❤
+    </div>
+  </div>
+
+</div>
+
+<div class="controls">
+  <button onclick="prev()">◀ Prev</button>
+  <button onclick="next()">Next ▶</button>
+</div>
+
+<script>
+  let index = 0;
+  const slides = document.getElementById("slides");
+
+  function update() {
+    slides.style.transform = "translateX(-" + index * 100 + "vw)";
+  }
+
+  function next() {
+    if (index < 3) index++;
+    update();
+  }
+
+  function prev() {
+    if (index > 0) index--;
+    update();
+  }
+</script>
+
+</body>
+</html>
