@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Pim 💙</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #cfe2ff;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 400%;
+      height: 100vh;
+      transition: transform 0.6s ease;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      padding: 60px 40px;
+      box-sizing: border-box;
+      background: linear-gradient(180deg, #e8f2ff, #ffffff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #4a7bd8;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      background: #6fa8ff;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      margin: 0 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4a7bd8;
+    }
+
+    .heart { color: #ff6fae; }
+  </style>
+</head>
+<body>
+
+
+
+<div class="slides" id="slides">
+
+  <section class="slide">
+    <h1>Happy Birthday, Pim 🎂</h1>
+    <div class="card">
+      วันนี้เป็นวันพิเศษของพิม 💙<br />
+      เลื่อนสไลด์ไปเรื่อยๆ นะ ✨
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>💌 Birthday Message</h2>
+    <div class="card">
+      สุขสันต์วันเกิดน้าา 🎉<br /><br />
+      ขอให้ปีนี้และปีต่อๆไปเป็นปีที่ดี
+      มีรอยยิ้มเยอะๆ และมีความสุขในแบบของเตงน้า 💙
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>📸 Gallery</h2>
+    <div class="card">
+      <div class="gallery">
+  <img src="3e2f8423-4a48-4bb3-b6b7-b4664e12cf99.png" alt="Birthday cat" class="photo-img" />
+</div>
+        <div class="photo">Add photo</div>
+        <div class="photo">Add photo</div>
+        <div class="photo">Add photo</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>🌟 Final Wish</h2>
+    <div class="card">
+      ขอให้วันเกิดปีนี้เต็มไปด้วยความสบายใจ<br />
+      และทุกวันมีความสุขเสมอ <span class="heart">❤</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="controls">
+  <button onclick="prev()">◀ Prev</button>
+  <button onclick="next()">Next ▶</button>
+</div>
+
+<script>
+  
+  let index = 0;
+  const slides = document.getElementById('slides');
+
+  function update() {
+    slides.style.transform = `translateX(-${index * 100}vw)`;
+  }
+
+  function next() {
+    if (index < 3) index++;
+    update();
+  }
+
+  function prev() {
+    if (index > 0) index--;
+    update();
+  }
+</script>
+
+</body>
+</html>
